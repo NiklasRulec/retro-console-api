@@ -6,7 +6,7 @@ export const appRouter = Router();
 appRouter.get("/consoles", async (req, res) => {
   try {
     const consoles = await Console.find();
-    res.json(consoles); // Sende die Konsolen-Daten im JSON-Format zurück.
+    res.json(consoles);
   } catch (error) {
     res.status(500).send({ error: error.message });
   }

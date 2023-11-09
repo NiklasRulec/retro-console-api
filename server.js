@@ -10,7 +10,10 @@ dotenv.config({
 });
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT;
+
+const AppDistPath = new URL("./dist/", import.meta.url);
+const AppIndex = new URL("./dist/index.html", import.meta.url);
 
 mongoose
   .connect(process.env.DB)
@@ -22,8 +25,13 @@ mongoose
   });
 
 app.use(express.json());
+app.use(express.static(AppDistPath.pathname));
 app.use(cors());
 app.use("/api", appRouter);
+
+app.get("/*", (req, res) => {
+  res.sendFile(AppIndex.pathname);
+});
 
 app.get("/api/status", (req, res) => {
   res.send({ status: "Ok" });
