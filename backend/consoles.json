@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Gamecube",
+    "manufacturer": "Nintendo",
+    "type": "stationary game console",
+    "releaseDate": {
+      "jap": "14.09.2001",
+      "us": "18.11.2001",
+      "eu": "03.05.2002"
+    },
+    "producedUntil": 2007,
+    "mainProcessor": "IBM PowerPC 750CXe clocked at 485 MHz",
+    "graphicsProcessor": "ATI/Nintendo clocked at 162 MHz",
+    "storageMedia": "MiniDVDs in a proprietary own format (1.46 GB)",
+    "controller": "Nintendo GameCube controller and Wavebird controller",
+    "onlineService": "only with a special broadband adapter or modem",
+    "unitsSold": "approx. 21.74 million",
+    "mostSuccessfulGame": "Super Smash Bros. Melee",
+    "predecessor": "Nintendo 64",
+    "successor": "Wii"
+  }
+]
