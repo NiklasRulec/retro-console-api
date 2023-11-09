@@ -3,7 +3,7 @@ import Console from "./ConsoleModel.js";
 
 export const appRouter = Router();
 
-appRouter.get("/", async (req, res) => {
+appRouter.get("/consoles", async (req, res) => {
   try {
     const consoles = await Console.find();
     res.json(consoles); // Sende die Konsolen-Daten im JSON-Format zurück.
@@ -12,11 +12,7 @@ appRouter.get("/", async (req, res) => {
   }
 });
 
-appRouter.get("/consoles", (req, res) => {
-  res.status(200).send();
-});
-
-appRouter.post("/console/:id", (req, res) => {
+appRouter.post("/consoles/:id", (req, res) => {
   const { id } = req.params;
   const { name } = req.body;
   if (!name) {
