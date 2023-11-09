@@ -6,7 +6,7 @@ import cors from "cors";
 import { appRouter } from "./routes.js";
 
 dotenv.config({
-  path: path.join(path.resolve(), "..", ".env"),
+  path: path.join(path.resolve(), ".", ".env"),
 });
 
 const app = express();
