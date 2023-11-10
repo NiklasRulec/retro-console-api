@@ -12,11 +12,12 @@ appRouter.get("/consoles", async (req, res) => {
   }
 });
 
-appRouter.post("/consoles/:id", (req, res) => {
-  const { id } = req.params;
-  const { name } = req.body;
-  if (!name) {
-    res.status(418).send({ message: "We need a Name!" });
+appRouter.get("/consoles/:name", async (req, res) => {
+  try {
+    const { name } = req.params;
+    const console = await Console.findOne({ name: name });
+    res.json(console);
+  } catch (error) {
+    res.status(500).send({ error: error.message });
   }
-  res.send({ console: `Console with name ${name} and ID of ${id}` });
 });
