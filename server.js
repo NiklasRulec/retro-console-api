@@ -11,18 +11,10 @@ dotenv.config({
 
 const app = express();
 const PORT = process.env.PORT;
-
 const AppDistPath = new URL("./dist/", import.meta.url);
 const AppIndex = new URL("./dist/index.html", import.meta.url);
 
-mongoose
-  .connect(process.env.DB)
-  .then(() => {
-    console.log("MongoDB Verbindung erfolgreich.");
-  })
-  .catch((err) => {
-    console.error("Fehler beim Verbinden mit MongoDB:", err.message);
-  });
+mongoose.connect(process.env.DB);
 
 app.use(express.json());
 app.use(express.static(AppDistPath.pathname));
